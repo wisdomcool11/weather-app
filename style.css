@@ -1,0 +1,212 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Nova Cut", system-ui;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #222;
+    background-image: url(weather_img/grass_land.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+}
+
+/* card */
+.card {
+    width: 90%;
+    max-width: 470px;
+    /* background: linear-gradient(135deg, #00feba, #5b548a); */
+    background: linear-gradient(135deg,#444, #ddd, #444);
+    color: #fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+}
+
+/* search container */
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search input{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px ;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+
+.search button{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.srch_Btn{
+    width: 16px;
+}
+
+
+/* resize the img tag */
+.resize_img{
+    width: 100px;
+    height: 100px;
+}
+
+/* weather icon */
+.weather-icon {
+    width: 170px;
+    height: 170px;
+    margin-top: 30px;
+}
+
+.weather h1{
+    /* styling the weather h1 */
+    font-size: 80px;
+    font-weight: 500;
+}
+.weather h2{
+    /* styling the weather h2 */
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+/* styling details */
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+/* styling col */
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img {
+    width: 40px; height: 40px;
+    margin-right: 10px;
+}
+
+.humidity, .wind{
+    font-size: 28px;
+    margin-top: -6px;
+}
+
+.weather{
+    display: none;
+    -webkit-animation: animate_me 0.6s;
+    animation: animate_me 0.6s;
+}
+
+@-webkit-keyframes animate_me{
+    from{ -webkit-transform: scale(0);}
+    to{ -webkit-transform: scale(1);}
+}
+@keyframes animate_me {
+    from{transform: scale(0);}
+    to{transform: scale(1);}
+}
+
+/* error message styling */
+.error{
+    font-size: 14px;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: none;
+}
+
+/* media query at 768px */
+@media (max-width: 768px) {
+    body{
+        animation: change_bg_img 15s linear 0.5s infinite forwards;
+    }
+    @keyframes change_bg_img {
+        0%{
+            background-image: url(weather_img/grass_land.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        50%{
+            background-image: url(weather_img/roses.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        100%{
+            background-image: url(weather_img/moutain_grass.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+    .card{
+        width: 500px;
+    }    
+}
+
+/* media query at 480px */
+@media (max-width: 480px) and (max-width: 767px) {
+    .card{
+        width: 379px;
+        color: #222;
+        opacity: 0.77;
+    }
+    .search input{
+        height: 46px;
+        width: 250px;
+        flex: 0;
+    }
+    .search button{
+        width: 50px;
+        height: 50px
+    }
+    .srch_Btn{
+        width: 12px;
+    }
+    .weather-icon{
+        width: 150px;
+        object-fit: fill;
+    }
+    .weather h1{
+        font-size: 66px;
+    }
+    .weather h2 {
+        font-size: 27px;
+    }
+    .details{
+        width: 100%;
+        padding: 0 10px;
+    }
+    .col img{
+        width: 30px;
+        height: 30px;
+    }
+    .humidity,.wind{
+        font-size: 22px;
+    }
+}
